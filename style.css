@@ -1,80 +1,302 @@
 :root {
-    --primary: #1A3C34;      /* Verde esmeralda profundo */
-    --secondary: #3E6B5E;    /* Verde refinado */
-    --accent: #C9A86A;       /* Dorado suave premium */
-    --light: #F4F4F2;        /* Blanco cálido */
-    --dark: #0F1F1A;         /* Grafito elegante */
-    
-    --success: #3E8E72;      /* Verde éxito */
-    --warning: #D9A441;      /* Dorado advertencia */
-    --danger: #C75A4A;       /* Terracota elegante */
-    --info: #4F7E9D;         /* Azul grisáceo */
+    --primary: #6a0dad;
+    --secondary: #9c27b0;
+    --light: #f3e5f5;
+    --dark: #4a148c;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --info: #2196f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--dark);
+    background: linear-gradient(135deg, #6a0dad, #9c27b0);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
-    color: var(--light);
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 .form-section, .receipt-section {
-    background-color: var(--light);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .section-title {
     color: var(--primary);
-    border-bottom: 2px solid var(--accent);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light);
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 label {
-    color: var(--primary);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
 }
 
 input, select {
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
 }
 
 input:focus, select:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(201,168,106,0.25);
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.2);
 }
 
 .btn {
+    display: inline-block;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-align: center;
 }
 
 .btn:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .btn-generate {
-    background: linear-gradient(135deg, var(--success), #5FAE8B);
+    background: linear-gradient(135deg, var(--success), #66bb6a);
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
 }
 
 .btn-add {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .btn-add-replica {
-    background: linear-gradient(135deg, var(--warning), #E8C57B);
+    background: linear-gradient(135deg, var(--warning), #ffb74d);
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .btn-add-watch {
-    background: linear-gradient(135deg, var(--info), #7CA5C1);
+    background: linear-gradient(135deg, var(--info), #64b5f6);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn-remove {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
 }
 
 .receipt-preview {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, #8e24aa, #ab47bc);
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-.receipt-row, .fiscal-info {
-    border-color: rgba(255,255,255,0.2);
+.receipt-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.receipt-logo {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.receipt-business {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.receipt-details {
+    flex-grow: 1;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+
+.receipt-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(255,255,255,0.5);
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.fiscal-info {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.fiscal-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.fiscal-label {
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.fiscal-value {
+    opacity: 0.8;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    opacity: 0.7;
+}
+
+.product-item {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
 }
 
 .discount-badge {
     background-color: var(--success);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-left: 10px;
 }
+
+.products-container {
+    margin-top: 20px;
+}
+
+.product-entry {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary);
+}
+
+.replica-entry {
+    border-left-color: var(--warning);
+}
+
+.watch-entry {
+    border-left-color: var(--info);
+}
+
+.delivery-info {
+    background-color: rgba(255, 152, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.free-delivery {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.paid-delivery {
+    color: var(--warning);
+    font-weight: bold;
+} ajusta esto para que tenga paleta de colores legante 
