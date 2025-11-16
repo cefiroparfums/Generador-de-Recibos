@@ -1,0 +1,80 @@
+:root {
+    --primary: #1A3C34;      /* Verde esmeralda profundo */
+    --secondary: #3E6B5E;    /* Verde refinado */
+    --accent: #C9A86A;       /* Dorado suave premium */
+    --light: #F4F4F2;        /* Blanco cálido */
+    --dark: #0F1F1A;         /* Grafito elegante */
+    
+    --success: #3E8E72;      /* Verde éxito */
+    --warning: #D9A441;      /* Dorado advertencia */
+    --danger: #C75A4A;       /* Terracota elegante */
+    --info: #4F7E9D;         /* Azul grisáceo */
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--dark);
+}
+
+header {
+    color: var(--light);
+}
+
+.form-section, .receipt-section {
+    background-color: var(--light);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.section-title {
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+}
+
+label {
+    color: var(--primary);
+}
+
+input, select {
+    border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(201,168,106,0.25);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.btn:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.btn-generate {
+    background: linear-gradient(135deg, var(--success), #5FAE8B);
+}
+
+.btn-add {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.btn-add-replica {
+    background: linear-gradient(135deg, var(--warning), #E8C57B);
+}
+
+.btn-add-watch {
+    background: linear-gradient(135deg, var(--info), #7CA5C1);
+}
+
+.receipt-preview {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.receipt-row, .fiscal-info {
+    border-color: rgba(255,255,255,0.2);
+}
+
+.discount-badge {
+    background-color: var(--success);
+}

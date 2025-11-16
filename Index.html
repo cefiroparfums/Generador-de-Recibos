@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cefiro - Generador ticket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cefiro</h1>
+            <p class="subtitle">Generador de Recibos</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="form-section">
+                <h2 class="section-title">Datos de la Venta</h2>
+                
+                <form id="sale-form">
+                    <div class="form-group">
+                        <label for="client-name">Nombre del Cliente</label>
+                        <input type="text" id="client-name" placeholder="Ingresa el nombre del cliente" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sale-date">Fecha de Venta</label>
+                        <input type="date" id="sale-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-address">Dirección de Entrega (opcional)</label>
+                        <input type="text" id="delivery-address" placeholder="Si aplica domicilio, ingresa la dirección">
+                    </div>
+                    
+                    <div class="products-container">
+                        <h3 class="section-title">Perfumes Normales</h3>
+                        <div id="normal-products-container">
+                            <!-- Los productos normales se agregarán aquí -->
+                        </div>
+                        <button type="button" id="add-normal-product" class="btn btn-add">+ Agregar Perfume Normal</button>
+                        
+                        <h3 class="section-title" style="margin-top: 30px;">Réplicas (1.1)</h3>
+                        <div id="replica-products-container">
+                            <!-- Las réplicas se agregarán aquí -->
+                        </div>
+                        <button type="button" id="add-replica-product" class="btn btn-add-replica">+ Agregar Réplica (1.1)</button>
+                        
+                        <h3 class="section-title" style="margin-top: 30px;">Relojes</h3>
+                        <div id="watch-products-container">
+                            <!-- Los relojes se agregarán aquí -->
+                        </div>
+                        <button type="button" id="add-watch-product" class="btn btn-add-watch">+ Agregar Reloj</button>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-generate">Generar Recibo</button>
+                </form>
+            </div>
+            
+            <div class="receipt-section">
+                <h2 class="section-title">Vista Previa del Recibo</h2>
+                
+                <div class="receipt-preview" id="receipt-preview">
+                    <div class="receipt-header">
+                        <div class="receipt-logo">💎</div>
+                        <div class="receipt-business">Cefiro Parfums</div>
+                        <div>Recibo de Venta</div>
+                    </div>
+                    
+                    <div class="receipt-details" id="receipt-details">
+                        <div class="empty-state">
+                            Complete el formulario para generar el recibo
+                        </div>
+                    </div>
+                    
+                    <div class="fiscal-info">
+                        <div class="fiscal-info-row">
+                            <span class="fiscal-label">Razón Social:</span>
+                            <span class="fiscal-value">CEFIRO</span>
+                        </div>
+                        <div class="fiscal-info-row">
+                            <span class="fiscal-label">NIT:</span>
+                            <span class="fiscal-value">1233338468-2</span>
+                        </div>
+                        <div class="fiscal-info-row">
+                            <span class="fiscal-label">Dirección:</span>
+                            <span class="fiscal-value">Piedecuesta, Santander</span>
+                        </div>
+                        <div class="fiscal-info-row">
+                            <span class="fiscal-label">Teléfono:</span>
+                            <span class="fiscal-value">310 6197587</span>
+                        </div>
+                        <div class="fiscal-info-row">
+                            <span class="fiscal-label">Régimen:</span>
+                            <span class="fiscal-value">Simplificado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-footer">
+                        Gracias por su compra • Vuelva pronto
+                    </div>
+                </div>
+                
+                <button id="download-pdf" class="btn btn-generate" style="margin-top: 20px; display: none;">Descargar PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
